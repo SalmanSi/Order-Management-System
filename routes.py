@@ -1,11 +1,11 @@
 from flask import Blueprint,redirect,render_template
 
 
-routes_bp=Blueprint('routes',__name__)
+routes_bp=Blueprint('routes',__name__,template_folder='templates')
 
 @routes_bp.route('/')
 def index():
-    return 'index page!'
+    return render_template('index.html')
 
 @routes_bp.route('/orders')
 def list_orders():
