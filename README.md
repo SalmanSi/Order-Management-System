@@ -1,7 +1,7 @@
 # 🛒 Order Management System
 
 A Flask-based web application for managing customer orders with user authentication, CRUD operations, and comprehensive activity logging.
-
+See the project on GitHub: https://github.com/SalmanSi/Order-Management-System/
 ---
 
 ## 🚀 Features
