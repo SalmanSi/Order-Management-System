@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Orders{% endblock %}
+
+{% block content %}
+<h2>Your Orders</h2>
+
+<a href="{{ url_for('routes.add_order') }}" style="display: inline-block; margin-bottom: 10px; padding: 6px 12px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 4px;">Add New Order</a>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <th style="border: 1px solid #ddd; padding: 8px;">Order ID</th>
+            <th style="border: 1px solid #ddd; padding: 8px;">Status</th>
+            <th style="border: 1px solid #ddd; padding: 8px;">Delivery Date</th>
+            <th style="border: 1px solid #ddd; padding: 8px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for o in orders %}
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ o.order_id }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ o.status }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ o.delivery_date }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">
+                <a href="{{ url_for('routes.edit_order', order_id=o.id) }}">Edit</a> |
+                <a href="{{ url_for('routes.mark_delivered', order_id=o.id) }}">Deliver</a> |
+                <a href="{{ url_for('routes.delete_order', order_id=o.id) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
