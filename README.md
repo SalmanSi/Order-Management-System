@@ -58,7 +58,7 @@ A Flask-based web application for managing customer orders with user authenticat
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/order-management-system.git
+git cloen https://github.com/SalmanSi/Order-Management-System.git
 cd order-management-system
 ```
 
